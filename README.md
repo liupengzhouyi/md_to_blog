@@ -18,7 +18,20 @@ docker build -t markdown2blog .
 docker run -itd -p 1313:1313 markdown2blog server -D --baseURL http://43.138.87.70 --port 1313
 ```
 
-### set your blog path
+### pull image
+
+```shell
+docker push liupeng0/markdown2blog:latest
+```
+
+### create blog path
+
+```shell
+mkdir -p /home/blog/test
+cd /home/blog
+```
+
+### build container
 
 ```shell
 docker run -itd -p 1313:1313 -v $(pwd)/test:/src/content markdown2blog server -D --baseURL http://43.138.87.70 --port 1313
@@ -28,9 +41,13 @@ docker run -itd -p 1313:1313 -v $(pwd)/test:/src/content markdown2blog server -D
 
 ```shell
 docker exec -it $(docker ps | grep "markdown2blog" | awk '{print $1}') hugo -F --cleanDestinationDir
-
-
 ```
+
+## How to rebuild
+
+1. update blog/config.toml
+
+2. baseURL = "http://43.138.87.70:1313" to your host ip and port.
 
 # Last but noy lest:
 
