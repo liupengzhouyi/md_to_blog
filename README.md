@@ -2,6 +2,9 @@
 
 I want to share my markdown note as blogs on web, Use docker tools.
 
+
+![img](./images/images.png)
+
 ## build docker image
 
 ```shell
@@ -44,7 +47,6 @@ docker exec -it $(docker ps | grep "markdown2blog" | awk '{print $1}') hugo -F -
 ## How to rebuild
 
 1. update blog/config.toml
-
 2. baseURL = "http://43.138.87.70:1313" to your host ip and port.
 
 # Last but noy lest:
