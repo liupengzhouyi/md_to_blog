@@ -10,8 +10,6 @@ docker build -t markdown2blog .
 
 ## build container by image
 
---name HugoBlog
-
 ### test
 
 ```shell
